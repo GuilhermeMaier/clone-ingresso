@@ -66,3 +66,5 @@ export const HeaderExclamationCircle = styled.span`
     color: #f90 !important;
   }
 `;
+
+export default MainHeader;

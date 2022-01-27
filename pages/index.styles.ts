@@ -8,3 +8,5 @@ export const App = styled.div`
   margin: 0 auto;
   background: wheat;
 `;
+
+export default App;
