@@ -5,22 +5,28 @@ export const MainHeader = styled.div`
   width: 100%;
 `;
 
-export const TopHeader = styled.div`
+export const TopHeaderContainer = styled.div`
   height: 60%;
   width: 100%;
-  display: flex;
-  padding: 10px 15px;
-  justify-content: space-between;
   background: rgba(0, 0, 0, 0.8);
 `;
 
-export const BottomHeader = styled.div`
+export const TopHeader = styled.div`
+  display: flex;
+  padding: 10px 15px;
+  justify-content: space-between;
+`;
+
+export const BottomHeaderContainer = styled.div`
   height: 40%;
   width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+`;
+
+export const BottomHeader = styled.div`
   display: flex;
   padding: 10px 15px;
   justify-content: end;
-  background: rgba(0, 0, 0, 0.7);
 
   & * {
     color: #09f !important;
@@ -46,7 +52,7 @@ export const HeaderIconContainer = styled.span`
 export const HeaderTextContainer = styled.span`
   color: white;
   font-size: 14px;
-  padding-left: 5px;
+  padding-right: 5px;
 `;
 
 export const HeaderExclamationCircle = styled.span`
