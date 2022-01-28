@@ -7,10 +7,15 @@ function Hero() {
   const [movies, setMovies] = useState({});
 
   async function fetchHeroMovie() {
-    const result = await axios.get(
-      "https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home"
-    );
-    setMovies(result);
+    try {
+      const result = await axios.get(
+        "https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home",
+        { headers: { "Access-Control-Allow-Origin": "*" } }
+      );
+      setMovies(result);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
