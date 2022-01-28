@@ -1,14 +1,15 @@
-import { table } from "console";
 import React from "react";
 import Header from "./components/header";
+import Hero from "./components/hero";
 import { App } from "./index.styles";
 
-function index() {
+function Index() {
   return (
     <App>
       <Header />
+      <Hero />
     </App>
   );
 }
 
-export default index;
+export default Index;

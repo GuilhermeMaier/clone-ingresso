@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const MainHeader = styled.div`
-  height: 100px;
   width: 100%;
+  position: fixed;
 `;
 
 export const TopHeaderContainer = styled.div`
@@ -47,12 +47,14 @@ export const HeaderItemContainer = styled.div`
 
 export const HeaderIconContainer = styled.span`
   color: #09f;
+  cursor: pointer;
 `;
 
 export const HeaderTextContainer = styled.span`
   color: white;
   font-size: 14px;
   padding-right: 5px;
+  cursor: pointer;
 `;
 
 export const HeaderExclamationCircle = styled.span`
