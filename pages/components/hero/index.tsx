@@ -1,15 +1,6 @@
 import axios from "axios";
-import { url } from "inspector";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import CentralizedContainer from "../common/common.styles";
-import HeroContainer, {
-  BottomGradient,
-  Gradient,
-  ImageContainer,
-  LeftGradient,
-  RightGradient,
-} from "./hero.styles";
+import HeroContainer, { ImageContainer } from "./hero.styles";
 
 function Hero() {
   const [movies, setMovies] = useState({});
