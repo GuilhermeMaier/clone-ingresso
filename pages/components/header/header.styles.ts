@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const MainHeader = styled.div`
   width: 100%;
   position: fixed;
+  z-index: 1;
 `;
 
 export const TopHeaderContainer = styled.div`
