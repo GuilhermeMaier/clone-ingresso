@@ -4,7 +4,7 @@ export const HeroContainer = styled.div`
   background: #212121;
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div<{ url: string }>`
   display: table;
   margin: 0 auto;
   height: 500px;
@@ -12,7 +12,7 @@ export const ImageContainer = styled.div`
   background-image: linear-gradient(
       to top,
       rgba(33, 33, 33, 1) 0%,
-      rgba(33, 33, 33, 0) 49%,
+      rgba(33, 33, 33, 0) 15%,
       rgba(33, 33, 33, 0) 100%
     ),
     linear-gradient(
@@ -27,7 +27,7 @@ export const ImageContainer = styled.div`
       rgba(33, 33, 33, 0) 49%,
       rgba(33, 33, 33, 0) 100%
     ),
-    url("/images/malevola.jpg");
+    url(${(props) => props.url});
 `;
 
 export default HeroContainer;
