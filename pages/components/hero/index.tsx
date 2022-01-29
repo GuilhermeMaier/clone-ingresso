@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import handler from "../../api/movies";
+import GenreContainer, { Genre } from "../common/genre/genre.styles";
 import Loading from "../common/loading";
-import HeroContainer, { ImageContainer } from "./hero.styles";
+import { Tag, TagsContainer } from "../common/tag/tag.styles";
+import HeroContainer, { FeaturedTitle, ImageContainer } from "./hero.styles";
 
 interface ITrailer {
   type: string;
@@ -32,6 +33,7 @@ interface IEvent {
 function Hero() {
   const [loading, setLoading] = useState<boolean>(true);
   const [movies, setMovies] = useState<IEvent[]>([]);
+  const [featuredMovie, setFeaturedMovie] = useState<IEvent>();
   const [featuredMovieUrl, setFeaturedMovieUrl] = useState<string>("");
 
   async function fetchHeroMovie() {
@@ -58,31 +60,32 @@ function Hero() {
       const currentURL = currentFeaturedData
         ? currentFeaturedData.event.images[1].url
         : "/images/malevola.jpg";
+      setFeaturedMovie(currentFeaturedData);
       setFeaturedMovieUrl(currentURL);
       setLoading(false);
-      console.log("featured", movies);
-      console.log("featured", loading);
-      console.log("featured", featuredMovie);
     }
   }, [movies]);
-
-  // useEffect(() => {
-  //   if (movies.length) {
-  //     const currentFeaturedData = movies[featuredMovie];
-  //     const currentURL = currentFeaturedData
-  //       ? currentFeaturedData.event.images[1].url
-  //       : "/images/malevola.jpg";
-  //     setFeaturedMovieUrl(currentURL);
-  //     setLoading(false);
-  //   }
-  // }, [featuredMovie]);
-
+  console.log(featuredMovie);
   return (
     <HeroContainer style={{ height: 500 }}>
       {loading ? (
         <Loading />
       ) : (
-        <ImageContainer url={featuredMovieUrl}></ImageContainer>
+        <ImageContainer url={featuredMovieUrl}>
+          <div style={{ position: "absolute", bottom: 0 }}>
+            <TagsContainer style={{ marginBottom: 5 }}>
+              <Tag style={{ background: "#31d885" }}>Família</Tag>
+              <Tag style={{ background: "#ee7f1d" }}>Em alta</Tag>
+            </TagsContainer>
+            <FeaturedTitle style={{ marginBottom: 5 }}>
+              {featuredMovie?.event.title}
+            </FeaturedTitle>
+            <GenreContainer style={{ marginBottom: 20 }}>
+              <Genre>Gênero</Genre>
+              <Genre>Gênero</Genre>
+            </GenreContainer>
+          </div>
+        </ImageContainer>
       )}
     </HeroContainer>
   );

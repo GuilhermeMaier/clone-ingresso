@@ -14,7 +14,7 @@ export const TopHeaderContainer = styled.div`
 
 export const TopHeader = styled.div`
   display: flex;
-  padding: 10px 15px;
+  padding: 10px 0;
   justify-content: space-between;
 `;
 

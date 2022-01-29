@@ -5,6 +5,7 @@ export const HeroContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div<{ url: string }>`
+  position: relative;
   display: table;
   margin: 0 auto;
   height: 500px;
@@ -28,6 +29,12 @@ export const ImageContainer = styled.div<{ url: string }>`
       rgba(33, 33, 33, 0) 100%
     ),
     url(${(props) => props.url});
+`;
+
+export const FeaturedTitle = styled.div`
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
 `;
 
 export default HeroContainer;

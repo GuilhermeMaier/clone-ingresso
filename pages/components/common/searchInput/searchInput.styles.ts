@@ -8,7 +8,7 @@ export const SearchInputContainer = styled.div`
     position: absolute;
     height: 30px;
     padding: 0 26px 0 15px;
-    top: -8px;
+    top: -5px;
     width: 100%;
     outline: none;
     background: white;
@@ -21,6 +21,7 @@ export const SeachIconContainer = styled.div`
   color: #09f;
   position: absolute;
   right: 5px;
+  top: 2px;
 `;
 
 export default SearchInputContainer;
