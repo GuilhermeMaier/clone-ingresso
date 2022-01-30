@@ -28,6 +28,10 @@ export const MoviesCarrousel = styled.div`
   justify-content: start;
   overflow: hidden;
   position: relative;
+
+  & * {
+    transition: all 0.5s ease;
+  }
 `;
 
 export const ArrowContainer = styled.div<{ side: "left" | "right" }>`
