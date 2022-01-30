@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const TagsContainer = styled.div`
   display: inline-flex;
+  text-shadow: none;
 `;
 
 export const Tag = styled.div`

@@ -31,10 +31,10 @@ export const ImageContainer = styled.div<{ url: string }>`
     url(${(props) => props.url});
 `;
 
-export const FeaturedTitle = styled.div`
+export const FeaturedTitle = styled.h2`
   color: white;
-  font-size: 22px;
   font-weight: bold;
+  margin-top: 0;
 `;
 
 export default HeroContainer;

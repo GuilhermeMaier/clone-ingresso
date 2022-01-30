@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const MainHeader = styled.div`
+export const MainHeader = styled.header`
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 9;
 `;
 
 export const TopHeaderContainer = styled.div`
@@ -51,11 +51,13 @@ export const HeaderIconContainer = styled.span`
   cursor: pointer;
 `;
 
-export const HeaderTextContainer = styled.span`
+export const HeaderTextContainer = styled.p`
   color: white;
   font-size: 14px;
   padding-right: 5px;
   cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
 `;
 
 export const HeaderExclamationCircle = styled.span`

@@ -1,10 +1,6 @@
-import { relative } from "path/posix";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import SearchInput, {
-  SeachIconContainer,
-  SearchInputContainer,
-} from "./searchInput.styles";
+import { SeachIconContainer, SearchInputContainer } from "./searchInput.styles";
 
 function SearchInputComponent() {
   return (

@@ -4,7 +4,7 @@ export const GenreContainer = styled.div`
   display: inline-flex;
 `;
 
-export const Genre = styled.div`
+export const Genre = styled.p`
   padding: 4px 10px;
   padding-bottom: 5px;
   background: transparent;
@@ -14,6 +14,8 @@ export const Genre = styled.div`
   border-radius: 3px;
   text-transform: uppercase;
   font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 0;
 `;
 
 export default GenreContainer;
