@@ -1,40 +1,23 @@
 import styled from "styled-components";
 
-export const MoviesContainer = styled.div`
+export const MoviesContainer = styled.section`
   background: #333333;
 `;
 
-export const ImageContainer = styled.div<{ url: string }>`
-  position: relative;
-  display: table;
-  margin: 0 auto;
-  height: 500px;
-  width: 1100px;
-  background-image: linear-gradient(
-      to top,
-      rgba(51, 51, 51, 1) 0%,
-      rgba(51, 51, 51, 0) 15%,
-      rgba(51, 51, 51, 0) 100%
-    ),
-    linear-gradient(
-      to left,
-      rgba(51, 51, 51, 1) 0%,
-      rgba(51, 51, 51, 0) 49%,
-      rgba(51, 51, 51, 0) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(51, 51, 51, 1) 0%,
-      rgba(51, 51, 51, 0) 49%,
-      rgba(51, 51, 51, 0) 100%
-    ),
-    url(${(props) => props.url});
+export const MoviesSectionTitle = styled.h2`
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 15px;
+  padding-top: 25px;
+  color: white;
 `;
 
-export const FeaturedTitle = styled.div`
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
+export const MoviesCarrousel = styled.div`
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 1100px;
 `;
 
 export default MoviesContainer;

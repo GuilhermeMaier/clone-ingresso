@@ -2,12 +2,19 @@ import styled from "styled-components";
 
 export const VerticalMovieContainer = styled.div`
   background: #212121;
-  max-height: 356px;
+  min-height: 356px;
   height: 356px;
-  max-width: 240px;
+  max-height: 356px;
+  min-width: 240px;
   width: 240px;
+  max-width: 240px;
   overflow: hidden;
   position: relative;
+  margin-right: 5px;
+
+  & :last-child {
+    margin-right: 0;
+  }
 `;
 
 export const ImageContainer = styled.div<{ url: string }>`

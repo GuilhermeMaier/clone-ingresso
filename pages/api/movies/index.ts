@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 async function Movies(request: NextApiRequest, response: NextApiResponse) {
+  // const result = await axios.get(
+  //   "https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home"
+  // );
   const mockedMovies = [
     {
       event: {

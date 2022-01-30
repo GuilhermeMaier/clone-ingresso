@@ -36,9 +36,6 @@ function Hero() {
 
   async function fetchHeroMovie() {
     try {
-      // const result = await axios.get(
-      //   "https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home"
-      // );
       setFeaturedMovieData((await axios.get("/api/featuredMovie")).data);
       setLoading(false);
     } catch (error) {
@@ -49,7 +46,7 @@ function Hero() {
   useEffect(() => {
     fetchHeroMovie();
   }, []);
-  console.log(feauredMovieData);
+
   return (
     <HeroContainer style={{ height: 500 }}>
       {loading ? (

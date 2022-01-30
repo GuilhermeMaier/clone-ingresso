@@ -1,13 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import GenreContainer, { Genre } from "../common/genre/genre.styles";
+import CentralizedContainer from "../common/common.styles";
 import Loading from "../common/loading";
-import { Tag, TagsContainer } from "../common/tag/tag.styles";
 import VerticalMovie from "../common/verticalMovie";
-import HeroContainer, {
-  FeaturedTitle,
-  ImageContainer,
+import {
+  MoviesCarrousel,
   MoviesContainer,
+  MoviesSectionTitle,
 } from "./movies.styles";
 
 interface ITrailer {
@@ -38,17 +37,10 @@ interface IEvent {
 function Movies() {
   const [loading, setLoading] = useState<boolean>(true);
   const [movies, setMovies] = useState<IEvent[]>([]);
-  const [featuredMovie, setFeaturedMovie] = useState<IEvent>();
-  const [featuredMovieUrl, setFeaturedMovieUrl] = useState<string>("");
 
   async function fetchMovies() {
     try {
-      // const result = await axios.get(
-      //   "https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home"
-      // );
-      const result = (await axios.get("/api/movies")).data;
-      setMovies(result);
-      return result;
+      setMovies((await axios.get("/api/movies")).data);
     } catch (error) {
       console.log(error);
     }
@@ -59,21 +51,35 @@ function Movies() {
   }, []);
 
   useEffect(() => {
+    movies && setLoading(false);
+  }, [movies]);
+
+  useEffect(() => {
     if (movies.length) {
       const featuredMovie = Math.floor(Math.random() * movies.length);
-      const currentFeaturedData = movies[featuredMovie];
-      const currentURL = currentFeaturedData
-        ? currentFeaturedData.event.images[1].url
-        : "/images/malevola.jpg";
-      setFeaturedMovie(currentFeaturedData);
-      setFeaturedMovieUrl(currentURL);
       setLoading(false);
     }
   }, [movies]);
-  console.log(featuredMovie);
+
+  const allVerticalMovies = movies.map((currentMovie) => {
+    return (
+      <VerticalMovie key={currentMovie.event.id} event={currentMovie.event} />
+    );
+  });
+
   return (
     <MoviesContainer style={{ height: 500 }}>
-      {loading ? <Loading /> : <VerticalMovie />}
+      {loading ? (
+        <Loading />
+      ) : (
+        <CentralizedContainer>
+          <MoviesSectionTitle>EM CARTAZ</MoviesSectionTitle>
+          <MoviesCarrousel>
+            {allVerticalMovies}
+            {allVerticalMovies}
+          </MoviesCarrousel>
+        </CentralizedContainer>
+      )}
     </MoviesContainer>
   );
 }
