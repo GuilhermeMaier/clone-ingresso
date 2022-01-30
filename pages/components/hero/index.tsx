@@ -32,18 +32,15 @@ interface IEvent {
 
 function Hero() {
   const [loading, setLoading] = useState<boolean>(true);
-  const [movies, setMovies] = useState<IEvent[]>([]);
-  const [featuredMovie, setFeaturedMovie] = useState<IEvent>();
-  const [featuredMovieUrl, setFeaturedMovieUrl] = useState<string>("");
+  const [feauredMovieData, setFeaturedMovieData] = useState<IEvent>();
 
   async function fetchHeroMovie() {
     try {
       // const result = await axios.get(
       //   "https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home"
       // );
-      const result = (await axios.get("/api/movies")).data;
-      setMovies(result);
-      return result;
+      setFeaturedMovieData((await axios.get("/api/featuredMovie")).data);
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -52,33 +49,26 @@ function Hero() {
   useEffect(() => {
     fetchHeroMovie();
   }, []);
-
-  useEffect(() => {
-    if (movies.length) {
-      const featuredMovie = Math.floor(Math.random() * movies.length);
-      const currentFeaturedData = movies[featuredMovie];
-      const currentURL = currentFeaturedData
-        ? currentFeaturedData.event.images[1].url
-        : "/images/malevola.jpg";
-      setFeaturedMovie(currentFeaturedData);
-      setFeaturedMovieUrl(currentURL);
-      setLoading(false);
-    }
-  }, [movies]);
-  console.log(featuredMovie);
+  console.log(feauredMovieData);
   return (
     <HeroContainer style={{ height: 500 }}>
       {loading ? (
         <Loading />
       ) : (
-        <ImageContainer url={featuredMovieUrl}>
+        <ImageContainer
+          url={
+            feauredMovieData
+              ? feauredMovieData.event.images[1].url
+              : "images/malevola.jpg"
+          }
+        >
           <div style={{ position: "absolute", bottom: 0 }}>
             <TagsContainer style={{ marginBottom: 5 }}>
               <Tag style={{ background: "#31d885" }}>Família</Tag>
               <Tag style={{ background: "#ee7f1d" }}>Em alta</Tag>
             </TagsContainer>
             <FeaturedTitle style={{ marginBottom: 5 }}>
-              {featuredMovie?.event.title}
+              {feauredMovieData?.event.title}
             </FeaturedTitle>
             <GenreContainer style={{ marginBottom: 20 }}>
               <Genre>Gênero</Genre>

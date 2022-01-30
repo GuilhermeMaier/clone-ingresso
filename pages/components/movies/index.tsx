@@ -41,7 +41,7 @@ function Movies() {
   const [featuredMovie, setFeaturedMovie] = useState<IEvent>();
   const [featuredMovieUrl, setFeaturedMovieUrl] = useState<string>("");
 
-  async function fetchHeroMovie() {
+  async function fetchMovies() {
     try {
       // const result = await axios.get(
       //   "https://api-content.ingresso.com/v0/templates/highlights/1/partnership/home"
@@ -55,7 +55,7 @@ function Movies() {
   }
 
   useEffect(() => {
-    fetchHeroMovie();
+    fetchMovies();
   }, []);
 
   useEffect(() => {
