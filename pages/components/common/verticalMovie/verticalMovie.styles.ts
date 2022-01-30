@@ -2,8 +2,12 @@ import styled from "styled-components";
 
 export const VerticalMovieContainer = styled.div`
   background: #212121;
+  max-height: 356px;
   height: 356px;
+  max-width: 240px;
   width: 240px;
+  overflow: hidden;
+  position: relative;
 `;
 
 export const ImageContainer = styled.div<{ url: string }>`
@@ -16,24 +20,30 @@ export const ImageContainer = styled.div<{ url: string }>`
   display: flex;
   flex-direction: column;
   justify-content: end;
-  background-image: linear-gradient(
-      to top,
-      rgba(51, 51, 51, 1) 0%,
-      rgba(51, 51, 51, 0) 15%,
-      rgba(51, 51, 51, 0) 100%
-    ),
-    url(${(props) => props.url});
+  background-image: url(${(props) => props.url});
   background-size: 240px 356px;
   text-shadow: black 0px 0px 2px;
   background-position-x: center;
   background-position-y: center;
+  transition: all 0.5s ease;
 
   & :hover {
-    background-size: auto 105%;
+    transform: scale(1.2);
   }
 `;
 
-export const VerticalMovieDataContainer = styled.div``;
+export const VerticalMovieDataContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 15px 15px 15px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+`;
 
 export const MovieTitleContainer = styled.div``;
 

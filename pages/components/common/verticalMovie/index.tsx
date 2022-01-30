@@ -75,7 +75,8 @@ function VerticalMovie() {
       {loading ? (
         <Loading />
       ) : (
-        <ImageContainer url={featuredMovieUrl}>
+        <>
+          <ImageContainer url={featuredMovieUrl} />
           <VerticalMovieDataContainer>
             <MovieTitleContainer>
               <TagsContainer>
@@ -85,7 +86,7 @@ function VerticalMovie() {
               <MovieTitle>{featuredMovie?.event.title}</MovieTitle>
             </MovieTitleContainer>
           </VerticalMovieDataContainer>
-        </ImageContainer>
+        </>
       )}
     </VerticalMovieContainer>
   );
