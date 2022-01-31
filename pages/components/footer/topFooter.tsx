@@ -37,11 +37,13 @@ function TopFooterComponent() {
                   height={45}
                   src={"/images/apple-store.svg"}
                 />
-                <Image
-                  width={130}
-                  height={44}
-                  src={"/images/google-play.png"}
-                />
+                <div style={{ borderRadius: 6, border: "1px solid #999" }}>
+                  <Image
+                    width={130}
+                    height={40}
+                    src={"/images/google-play.png"}
+                  />
+                </div>
               </FooterImagesContainer>
             </FooterItemContainer>
             <FooterItemContainer style={{ width: 280 }}>

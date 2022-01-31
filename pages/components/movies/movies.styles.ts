@@ -35,6 +35,7 @@ export const MoviesCarrousel = styled.div`
 `;
 
 export const ArrowContainer = styled.div<{ side: "left" | "right" }>`
+  cursor: pointer;
   position: absolute;
   width: 150px;
   height: 356px;
