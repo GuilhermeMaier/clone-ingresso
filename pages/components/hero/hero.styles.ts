@@ -4,7 +4,11 @@ export const HeroContainer = styled.section`
   background: #212121;
 `;
 
-export const ImageContainer = styled.div<{ url: string }>`
+export const MovieRedirector = styled.a`
+  cursor: pointer;
+`;
+
+export const ImageContainer = styled.a<{ url: string }>`
   position: relative;
   display: table;
   margin: 0 auto;

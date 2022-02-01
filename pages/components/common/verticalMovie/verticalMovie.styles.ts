@@ -17,7 +17,7 @@ export const VerticalMovieContainer = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div<{ url: string }>`
+export const ImageContainer = styled.a<{ url: string }>`
   position: relative;
   display: table;
   margin: 0 auto;

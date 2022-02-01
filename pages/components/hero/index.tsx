@@ -53,6 +53,8 @@ function Hero() {
         <Loading />
       ) : (
         <ImageContainer
+          href={feauredMovieData?.event.trailers[0].url}
+          target={"_blank"}
           url={
             feauredMovieData
               ? feauredMovieData.event.images[1].url

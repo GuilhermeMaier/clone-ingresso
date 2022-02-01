@@ -44,7 +44,11 @@ function VerticalMovie({ event }: IEvent) {
     <Loading />
   ) : (
     <VerticalMovieContainer>
-      <ImageContainer url={event ? event?.images[0].url : ""} />
+      <ImageContainer
+        href={event.trailers[0].url}
+        target={"_blank"}
+        url={event ? event?.images[0].url : ""}
+      />
       <VerticalMovieDataContainer>
         <MovieTitleContainer>
           <TagsContainer>
