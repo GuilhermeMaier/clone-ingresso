@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const SearchInputContainer = styled.div`
+export const CustomSelectContainer = styled.div`
   width: 250px;
   display: flex;
+  border-radius: 3px;
 
-  & input {
-    position: absolute;
+  & select {
     height: 30px;
     padding: 0 26px 0 15px;
     top: -5px;
@@ -19,15 +19,16 @@ export const SearchInputContainer = styled.div`
     & :focus {
       border: 1px solid #09f;
       border-left: 3px solid #09f;
+      border-radius: 3px;
     }
   }
 `;
 
-export const SeachIconContainer = styled.div`
+export const CustomSelectIconContainer = styled.div`
   color: #09f;
   position: absolute;
   right: 5px;
   top: 2px;
 `;
 
-export default SearchInputContainer;
+export default CustomSelectContainer;

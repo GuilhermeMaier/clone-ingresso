@@ -87,9 +87,7 @@ function TopHeaderComponent() {
           </TopHeader>
         </CentralizedContainer>
       </TopHeaderContainer>
-      {cityModalVisibility && (
-        <CityModalComponent topPosition={greatLogo ? 60 : 54} />
-      )}
+      {cityModalVisibility && <CityModalComponent />}
     </>
   );
 }

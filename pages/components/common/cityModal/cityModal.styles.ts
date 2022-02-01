@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const CityModal = styled.div`
   background: #212121;
-  height: 50vh;
-  width: 50vw;
+  width: 550px;
   right: 0;
   display: flex;
   position: absolute;
@@ -12,10 +11,12 @@ export const CityModal = styled.div`
 `;
 
 export const LeftContainer = styled.div`
+  padding-right: 20px;
   width: 60%;
 `;
 
 export const RightContainer = styled.div`
+  padding-left: 20px;
   width: 40%;
   border-left: 1px solid #666;
 `;
