@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CentralizedContainer = styled.div`
   width: 80vw;
+  max-width: 1100px;
   display: table;
   margin: 0 auto;
 `;

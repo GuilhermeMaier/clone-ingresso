@@ -14,6 +14,7 @@ export const ImageContainer = styled.a<{ url: string }>`
   margin: 0 auto;
   height: 500px;
   width: 80vw;
+  max-width: 1100px;
   background-image: linear-gradient(
       to top,
       rgba(33, 33, 33, 1) 0%,

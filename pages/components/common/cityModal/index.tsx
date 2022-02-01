@@ -1,8 +1,17 @@
 import React from "react";
-import CityModal from "./cityModal.styles";
+import CityModal, { LeftContainer, RightContainer } from "./cityModal.styles";
 
-function CityModalComponent() {
-  return <CityModal>Modal da Cidade</CityModal>;
+interface ICityModal {
+  topPosition: number;
+}
+
+function CityModalComponent({ topPosition }: ICityModal) {
+  return (
+    <CityModal style={{ top: topPosition }}>
+      <LeftContainer>Fonfon</LeftContainer>
+      <RightContainer>TonOn</RightContainer>
+    </CityModal>
+  );
 }
 
 export default CityModalComponent;

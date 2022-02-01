@@ -16,6 +16,7 @@ import {
 import { CentralizedContainer, VeticalAligner } from "../common/common.styles";
 import SearchInputComponent from "../common/searchInput";
 import CityModalComponent from "../common/cityModal";
+import CityModal from "../common/cityModal/cityModal.styles";
 
 function TopHeaderComponent() {
   const [cityModalVisibility, setCityModalVisibility] =
@@ -32,7 +33,7 @@ function TopHeaderComponent() {
 
   return (
     <>
-      <TopHeaderContainer>
+      <TopHeaderContainer style={{ height: greatLogo ? 60 : 54 }}>
         <CentralizedContainer>
           <TopHeader>
             <HeaderLogoContainer>
@@ -86,7 +87,9 @@ function TopHeaderComponent() {
           </TopHeader>
         </CentralizedContainer>
       </TopHeaderContainer>
-      {cityModalVisibility && <CityModalComponent />}
+      {cityModalVisibility && (
+        <CityModalComponent topPosition={greatLogo ? 60 : 54} />
+      )}
     </>
   );
 }
