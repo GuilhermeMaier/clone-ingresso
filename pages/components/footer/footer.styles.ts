@@ -74,13 +74,14 @@ export const FooterTextClickableContainer = styled.a`
   cursor: pointer;
 `;
 
-export const FooterHelpContainer = styled.div`
+export const FooterHelpContainer = styled.a`
   border: 1px solid #09f;
   border-radius: 3px;
   background: transparent;
   color: #09f;
   padding: 10px 15px;
   font-weight: bold;
+  cursor: pointer;
 `;
 
 export default MainFooter;

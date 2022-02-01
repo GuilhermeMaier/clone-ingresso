@@ -9,6 +9,7 @@ import {
   FooterIconContainer,
   FooterImagesContainer,
   FooterItemContainer,
+  FooterTextClickableContainer,
   FooterTextContainer,
   TopFooter,
   TopFooterContainer,
@@ -32,18 +33,37 @@ function TopFooterComponent() {
             <FooterItemContainer style={{ width: 280 }}>
               <FooterTextContainer>BAIXE NOSSO APP</FooterTextContainer>
               <FooterImagesContainer>
-                <Image
-                  width={130}
-                  height={45}
-                  src={"/images/apple-store.svg"}
-                />
-                <div style={{ borderRadius: 6, border: "1px solid #999" }}>
+                <FooterTextClickableContainer
+                  href={
+                    "https://itunes.apple.com/br/app/ingresso-com/id1165054492?mt=8"
+                  }
+                  target={"_blank"}
+                >
                   <Image
                     width={130}
-                    height={40}
+                    height={45}
+                    src={"/images/apple-store.svg"}
+                  />
+                </FooterTextClickableContainer>
+                <FooterTextClickableContainer
+                  style={{
+                    borderRadius: 6,
+                    border: "1px solid #999",
+                    padding: 0,
+                    height: "fit-content",
+                    marginTop: 5,
+                  }}
+                  href={
+                    "https://play.google.com/store/apps/details?id=com.ingresso.cinemas&hl=pt_BR"
+                  }
+                  target={"_blank"}
+                >
+                  <Image
+                    width={130}
+                    height={38}
                     src={"/images/google-play.png"}
                   />
-                </div>
+                </FooterTextClickableContainer>
               </FooterImagesContainer>
             </FooterItemContainer>
             <FooterItemContainer style={{ width: 280 }}>
@@ -51,24 +71,49 @@ function TopFooterComponent() {
                 SIGA-NOS NAS REDES SOCIAIS
               </FooterTextContainer>
               <FooterImagesContainer style={{ justifyContent: "start" }}>
-                <FooterIconContainer style={{ background: "#1977f3" }}>
-                  <FiFacebook />
-                </FooterIconContainer>
-                <FooterIconContainer style={{ background: "#ff3300" }}>
-                  <FiYoutube />
-                </FooterIconContainer>
-                <FooterIconContainer style={{ background: "#f90" }}>
-                  <FiInstagram />
-                </FooterIconContainer>
-                <FooterIconContainer style={{ background: "#0077b5" }}>
-                  <FiLinkedin />
-                </FooterIconContainer>
+                <FooterTextClickableContainer
+                  href={"http://facebook.com/ingressocom/"}
+                  target={"_blank"}
+                >
+                  <FooterIconContainer style={{ background: "#1977f3" }}>
+                    <FiFacebook />
+                  </FooterIconContainer>
+                </FooterTextClickableContainer>
+                <FooterTextClickableContainer
+                  href={"http://youtube.com/user/Ingressocom"}
+                  target={"_blank"}
+                >
+                  <FooterIconContainer style={{ background: "#ff3300" }}>
+                    <FiYoutube />
+                  </FooterIconContainer>
+                </FooterTextClickableContainer>
+                <FooterTextClickableContainer
+                  href={"http://www.instagram.com/ingressocom/"}
+                  target={"_blank"}
+                >
+                  <FooterIconContainer style={{ background: "#f90" }}>
+                    <FiInstagram />
+                  </FooterIconContainer>
+                </FooterTextClickableContainer>
+                <FooterTextClickableContainer
+                  href={"https://www.linkedin.com/company/ingresso-com/"}
+                  target={"_blank"}
+                >
+                  <FooterIconContainer style={{ background: "#0077b5" }}>
+                    <FiLinkedin />
+                  </FooterIconContainer>
+                </FooterTextClickableContainer>
               </FooterImagesContainer>
             </FooterItemContainer>
             <FooterItemContainer style={{ width: 280 }}>
               <FooterTextContainer>PRECISA DE AJUDA?</FooterTextContainer>
               <FooterImagesContainer>
-                <FooterHelpContainer>ATENDIMENTO</FooterHelpContainer>
+                <FooterHelpContainer
+                  href={"https://atendimento.ingresso.com/hc/pt-br"}
+                  target={"_blank"}
+                >
+                  ATENDIMENTO
+                </FooterHelpContainer>
               </FooterImagesContainer>
             </FooterItemContainer>
           </FooterAllItemsContainer>
