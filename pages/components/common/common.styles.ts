@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CentralizedContainer = styled.div`
-  width: 1100px;
+  width: 80vw;
   display: table;
   margin: 0 auto;
 `;

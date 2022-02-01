@@ -9,7 +9,7 @@ export const ImageContainer = styled.div<{ url: string }>`
   display: table;
   margin: 0 auto;
   height: 500px;
-  width: 1100px;
+  width: 80vw;
   background-image: linear-gradient(
       to top,
       rgba(33, 33, 33, 1) 0%,

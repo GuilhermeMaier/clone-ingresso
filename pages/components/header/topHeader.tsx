@@ -5,6 +5,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiHelpCircle } from "react-icons/bi";
 import {
   HeaderAllItemsContainer,
+  HeaderClickableTextContainer,
   HeaderIconContainer,
   HeaderItemContainer,
   HeaderLogoContainer,
@@ -30,11 +31,16 @@ function TopHeaderComponent() {
       <CentralizedContainer>
         <TopHeader>
           <HeaderLogoContainer>
-            <Image
-              src={"/images/logo.png"}
-              height={greatLogo ? 40 : 30}
-              width={greatLogo ? 256.67 : 192.5}
-            />
+            <HeaderClickableTextContainer
+              href={"https://ingresso.com/home"}
+              target={"_blank"}
+            >
+              <Image
+                src={"/images/logo.png"}
+                height={greatLogo ? 40 : 30}
+                width={greatLogo ? 256.67 : 192.5}
+              />
+            </HeaderClickableTextContainer>
           </HeaderLogoContainer>
           <VeticalAligner>
             <HeaderAllItemsContainer>
@@ -55,14 +61,19 @@ function TopHeaderComponent() {
                   <FaRegUser />
                 </HeaderIconContainer>
               </HeaderItemContainer>
-              <HeaderItemContainer>
-                <HeaderTextContainer>Atendimento</HeaderTextContainer>
-                <HeaderIconContainer>
-                  <BiHelpCircle
-                    style={{ fontSize: 17, position: "relative", top: -1 }}
-                  />
-                </HeaderIconContainer>
-              </HeaderItemContainer>
+              <HeaderClickableTextContainer
+                href={"https://atendimento.ingresso.com/hc/pt-br"}
+                target={"_blank"}
+              >
+                <HeaderItemContainer>
+                  <HeaderTextContainer>Atendimento</HeaderTextContainer>
+                  <HeaderIconContainer>
+                    <BiHelpCircle
+                      style={{ fontSize: 17, position: "relative", top: -1 }}
+                    />
+                  </HeaderIconContainer>
+                </HeaderItemContainer>
+              </HeaderClickableTextContainer>
             </HeaderAllItemsContainer>
           </VeticalAligner>
         </TopHeader>

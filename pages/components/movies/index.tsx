@@ -9,7 +9,9 @@ import {
   MoviesCarrousel,
   MoviesCarrouselContainer,
   MoviesContainer,
+  MoviesSectionClickableText,
   MoviesSectionTitle,
+  MoviesSectionTitleContainer,
 } from "./movies.styles";
 
 interface ITrailer {
@@ -88,7 +90,15 @@ function Movies() {
       ) : (
         <>
           <CentralizedContainer>
-            <MoviesSectionTitle>EM CARTAZ</MoviesSectionTitle>
+            <MoviesSectionTitleContainer>
+              <MoviesSectionTitle>EM CARTAZ</MoviesSectionTitle>
+              <MoviesSectionClickableText
+                href={"https://ingresso.com/filmes"}
+                target={"_blank"}
+              >
+                ver todos
+              </MoviesSectionClickableText>
+            </MoviesSectionTitleContainer>
             <MoviesCarrouselContainer>
               <MoviesCarrousel style={{ width: movies.length * 2 * 240 }}>
                 <ArrowContainer

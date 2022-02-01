@@ -5,13 +5,29 @@ export const MoviesContainer = styled.section`
   position: relative;
 `;
 
+export const MoviesSectionTitleContainer = styled.div`
+  padding-bottom: 15px;
+  padding-top: 30px;
+  display: flex;
+`;
+
 export const MoviesSectionTitle = styled.h2`
-  font-size: 15px;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 15px;
-  padding-top: 25px;
+  font-size: 14px;
   color: white;
+`;
+
+export const MoviesSectionClickableText = styled.a`
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 40px;
+  font-size: 12px;
+  color: #09f;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const MoviesCarrouselContainer = styled.div`

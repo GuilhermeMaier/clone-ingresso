@@ -3,6 +3,7 @@ import {
   BottomHeader,
   BottomHeaderContainer,
   HeaderAllItemsContainer,
+  HeaderClickableTextContainer,
   HeaderItemContainer,
   HeaderTextContainer,
 } from "./header.styles";
@@ -16,16 +17,36 @@ function BottomHeaderComponent() {
           <VeticalAligner>
             <HeaderAllItemsContainer>
               <HeaderItemContainer>
-                <HeaderTextContainer>FILMES</HeaderTextContainer>
+                <HeaderClickableTextContainer
+                  href={"https://ingresso.com/filmes"}
+                  target={"_blank"}
+                >
+                  <HeaderTextContainer>FILMES</HeaderTextContainer>
+                </HeaderClickableTextContainer>
               </HeaderItemContainer>
               <HeaderItemContainer>
-                <HeaderTextContainer>CINEMAS</HeaderTextContainer>
+                <HeaderClickableTextContainer
+                  href={"https://ingresso.com/cinemas"}
+                  target={"_blank"}
+                >
+                  <HeaderTextContainer>CINEMAS</HeaderTextContainer>
+                </HeaderClickableTextContainer>
               </HeaderItemContainer>
               <HeaderItemContainer>
-                <HeaderTextContainer>EVENTOS</HeaderTextContainer>
+                <HeaderClickableTextContainer
+                  href={"https://ingresso.com/eventos"}
+                  target={"_blank"}
+                >
+                  <HeaderTextContainer>EVENTOS</HeaderTextContainer>
+                </HeaderClickableTextContainer>
               </HeaderItemContainer>
               <HeaderItemContainer>
-                <HeaderTextContainer>ROCK IN RIO</HeaderTextContainer>
+                <HeaderClickableTextContainer
+                  href={"https://rockinrio.ingresso.com"}
+                  target={"_blank"}
+                >
+                  <HeaderTextContainer>ROCK IN RIO</HeaderTextContainer>
+                </HeaderClickableTextContainer>
               </HeaderItemContainer>
             </HeaderAllItemsContainer>
           </VeticalAligner>

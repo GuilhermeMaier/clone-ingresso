@@ -1,4 +1,5 @@
 import React from "react";
+import CopyrightComponent from "./components/copyright/index,";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Hero from "./components/hero";
@@ -12,6 +13,7 @@ function Index() {
       <Hero />
       <Movies />
       <Footer />
+      <CopyrightComponent />
     </App>
   );
 }

@@ -51,6 +51,15 @@ export const HeaderIconContainer = styled.span`
   cursor: pointer;
 `;
 
+export const HeaderClickableTextContainer = styled.a`
+  color: white;
+  font-size: 14px;
+  padding-right: 5px;
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
+`;
+
 export const HeaderTextContainer = styled.p`
   color: white;
   font-size: 14px;

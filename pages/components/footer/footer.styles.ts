@@ -21,13 +21,8 @@ export const BottomFooterContainer = styled.div`
 
 export const BottomFooter = styled.div`
   display: flex;
-  padding: 10px 15px;
-  justify-content: end;
-
-  & * {
-    color: #09f !important;
-    font-weight: bold;
-  }
+  padding: 10px 0;
+  justify-content: space-between;
 `;
 
 export const FooterAllItemsContainer = styled.div`
@@ -38,6 +33,9 @@ export const FooterAllItemsContainer = styled.div`
 `;
 
 export const FooterItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
   & span {
     margin-right: 15px;
   }
@@ -67,6 +65,13 @@ export const FooterTextContainer = styled.h1`
   font-size: 14px;
   margin-top: 30px;
   margin-bottom: 10px;
+`;
+
+export const FooterTextClickableContainer = styled.a`
+  color: #09f;
+  font-size: 14px;
+  padding: 5px 0;
+  cursor: pointer;
 `;
 
 export const FooterHelpContainer = styled.div`
