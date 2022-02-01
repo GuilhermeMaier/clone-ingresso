@@ -21,7 +21,10 @@ function CopyrightComponent() {
             </CopyrightText>
           </CopyrightTextContainer>
           <CopyrightTextContainer>
-            <CopyrightClickableText>
+            <CopyrightClickableText
+              href={"https://atendimento.ingresso.com/hc/pt-br"}
+              target={"_blank"}
+            >
               Atendimento ao cliente
             </CopyrightClickableText>
             <CopyrightText>
