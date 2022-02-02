@@ -16,13 +16,12 @@ import {
 import { CentralizedContainer, VeticalAligner } from "../common/common.styles";
 import SearchInputComponent from "../common/searchInput";
 import CityModalComponent from "../common/cityModal";
-import CityModal from "../common/cityModal/cityModal.styles";
 
 function TopHeaderComponent() {
   const [cityModalVisibility, setCityModalVisibility] =
     useState<boolean>(false);
-  const [userCity, setUserCity] = useState<string>("São Paulo");
-  const [userCityID, setUserCityID] = useState<1 | 2>(1);
+  const [userCity, setUserCity] = useState<string>("Selecione uma cidade");
+  const [userCityID, setUserCityID] = useState<number>(0);
   const [greatLogo, setGreatLogo] = useState(true);
 
   useEffect(() => {
@@ -30,6 +29,14 @@ function TopHeaderComponent() {
     window.addEventListener("scroll", scrollListener);
     return () => window.removeEventListener("scroll", scrollListener);
   }, []);
+
+  const changeUserCity = (changedCity: string) => {
+    setUserCity(changedCity);
+  };
+
+  const changeUserCityID = (changedCityID: number) => {
+    setUserCityID(changedCityID);
+  };
 
   return (
     <>
@@ -87,7 +94,14 @@ function TopHeaderComponent() {
           </TopHeader>
         </CentralizedContainer>
       </TopHeaderContainer>
-      {cityModalVisibility && <CityModalComponent />}
+      {cityModalVisibility && (
+        <CityModalComponent
+          userCity={userCity}
+          userCityID={userCityID}
+          handleChangeUserCity={changeUserCity}
+          handleChangeUserCityID={changeUserCityID}
+        />
+      )}
     </>
   );
 }
