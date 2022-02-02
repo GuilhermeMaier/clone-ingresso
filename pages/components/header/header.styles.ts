@@ -49,6 +49,9 @@ export const HeaderItemContainer = styled.div`
 export const HeaderIconContainer = styled.span`
   color: #09f;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const HeaderClickableTextContainer = styled.a`
@@ -67,6 +70,9 @@ export const HeaderTextContainer = styled.p`
   cursor: pointer;
   margin-top: 0;
   margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const HeaderExclamationCircle = styled.span`

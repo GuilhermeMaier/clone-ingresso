@@ -9,6 +9,7 @@ import {
   MoviesCarrousel,
   MoviesCarrouselContainer,
   MoviesContainer,
+  MoviesInnerCarrousel,
   MoviesSectionClickableText,
   MoviesSectionTitle,
   MoviesSectionTitleContainer,
@@ -85,7 +86,9 @@ function Movies({ userCityID }: ICityModal) {
 
   function handleRightArrowClick() {
     const x = scrollX - 300;
-    setScrollX(x < -1340 ? -1340 : x);
+    const maxMargin = 270 * movies.length * -1;
+    console.log(movies.length);
+    setScrollX(x < maxMargin ? maxMargin : x);
   }
 
   const allVerticalMovies = movies.map((currentMovie) => {
@@ -110,33 +113,35 @@ function Movies({ userCityID }: ICityModal) {
                 ver todos
               </MoviesSectionClickableText>
             </MoviesSectionTitleContainer>
-            <MoviesCarrouselContainer>
-              <MoviesCarrousel style={{ width: movies.length * 2 * 240 }}>
-                <ArrowContainer
-                  side={"left"}
-                  style={{ display: scrollX == 0 ? "none" : "flex" }}
-                  onClick={handleLeftArrowClick}
-                >
-                  <BsChevronLeft />
-                </ArrowContainer>
+          </CentralizedContainer>
+          <MoviesCarrouselContainer>
+            <ArrowContainer
+              side={"left"}
+              style={{ display: scrollX == 0 ? "none" : "flex" }}
+              onClick={handleLeftArrowClick}
+            >
+              <BsChevronLeft />
+            </ArrowContainer>
+            <MoviesCarrousel>
+              <MoviesInnerCarrousel>
                 <div
                   className="MarginHandler"
                   style={{ marginRight: scrollX }}
                 ></div>
                 {allVerticalMovies}
                 {allVerticalMovies}
-                <ArrowContainer
-                  side={"right"}
-                  style={{
-                    display: scrollX == -1340 ? "none" : "flex",
-                  }}
-                  onClick={handleRightArrowClick}
-                >
-                  <BsChevronRight />
-                </ArrowContainer>
-              </MoviesCarrousel>
-            </MoviesCarrouselContainer>
-          </CentralizedContainer>
+              </MoviesInnerCarrousel>
+            </MoviesCarrousel>
+            <ArrowContainer
+              side={"right"}
+              style={{
+                display: scrollX == 270 * movies.length * -1 ? "none" : "flex",
+              }}
+              onClick={handleRightArrowClick}
+            >
+              <BsChevronRight />
+            </ArrowContainer>
+          </MoviesCarrouselContainer>
         </>
       )}
     </MoviesContainer>
