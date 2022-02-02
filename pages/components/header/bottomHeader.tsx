@@ -21,7 +21,7 @@ function BottomHeaderComponent() {
                   href={"https://ingresso.com/filmes"}
                   target={"_blank"}
                 >
-                  <HeaderTextContainer>FILMES</HeaderTextContainer>
+                  FILMES
                 </HeaderClickableTextContainer>
               </HeaderItemContainer>
               <HeaderItemContainer>
@@ -29,7 +29,7 @@ function BottomHeaderComponent() {
                   href={"https://ingresso.com/cinemas"}
                   target={"_blank"}
                 >
-                  <HeaderTextContainer>CINEMAS</HeaderTextContainer>
+                  CINEMAS
                 </HeaderClickableTextContainer>
               </HeaderItemContainer>
               <HeaderItemContainer>
@@ -37,7 +37,7 @@ function BottomHeaderComponent() {
                   href={"https://ingresso.com/eventos"}
                   target={"_blank"}
                 >
-                  <HeaderTextContainer>EVENTOS</HeaderTextContainer>
+                  EVENTOS
                 </HeaderClickableTextContainer>
               </HeaderItemContainer>
               <HeaderItemContainer>
@@ -45,7 +45,7 @@ function BottomHeaderComponent() {
                   href={"https://rockinrio.ingresso.com"}
                   target={"_blank"}
                 >
-                  <HeaderTextContainer>ROCK IN RIO</HeaderTextContainer>
+                  ROCK IN RIO
                 </HeaderClickableTextContainer>
               </HeaderItemContainer>
             </HeaderAllItemsContainer>

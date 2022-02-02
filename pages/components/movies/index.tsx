@@ -80,12 +80,12 @@ function Movies({ userCityID }: ICityModal) {
   }, [movies]);
 
   function handleLeftArrowClick() {
-    const x = scrollX + 300;
+    const x = scrollX + 600;
     setScrollX(x > 0 ? 0 : x);
   }
 
   function handleRightArrowClick() {
-    const x = scrollX - 300;
+    const x = scrollX - 600;
     const maxMargin = 270 * movies.length * -1;
     console.log(movies.length);
     setScrollX(x < maxMargin ? maxMargin : x);

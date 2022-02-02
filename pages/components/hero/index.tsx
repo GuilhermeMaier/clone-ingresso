@@ -59,7 +59,7 @@ function Hero({ userCityID }: ICityModal) {
   }, [userCityID]);
 
   return (
-    <HeroContainer style={{ height: 500 }}>
+    <HeroContainer>
       {loading ? (
         <Loading />
       ) : (

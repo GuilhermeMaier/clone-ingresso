@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const MainFooter = styled.footer`
   width: 100%;
   background: #212121;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `;
 
 export const TopFooterContainer = styled.div`

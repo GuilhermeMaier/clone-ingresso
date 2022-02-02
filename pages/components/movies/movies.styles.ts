@@ -48,6 +48,11 @@ export const MoviesCarrousel = styled.div`
   & * {
     transition: all 0.5s ease;
   }
+
+  @media (max-width: 1100px) {
+    width: 100vw;
+    max-width: 100%;
+  }
 `;
 
 export const MoviesInnerCarrousel = styled.div`

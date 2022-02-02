@@ -73,6 +73,10 @@ export const HeaderTextContainer = styled.p`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 1260px) {
+    display: none;
+  }
 `;
 
 export const HeaderExclamationCircle = styled.span`
