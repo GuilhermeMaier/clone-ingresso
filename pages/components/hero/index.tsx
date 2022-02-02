@@ -30,7 +30,11 @@ interface IEvent {
   event: IMovie;
 }
 
-function Hero() {
+export interface ICityModal {
+  userCityID: number;
+}
+
+function Hero({ userCityID }: ICityModal) {
   const [loading, setLoading] = useState<boolean>(true);
   const [feauredMovieData, setFeaturedMovieData] = useState<IEvent>();
 
@@ -46,6 +50,13 @@ function Hero() {
   useEffect(() => {
     fetchHeroMovie();
   }, []);
+
+  useEffect(() => {
+    if (userCityID != 0) {
+      setLoading(true);
+      fetchHeroMovie();
+    }
+  }, [userCityID]);
 
   return (
     <HeroContainer style={{ height: 500 }}>

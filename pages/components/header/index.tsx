@@ -3,8 +3,16 @@ import { MainHeader } from "./header.styles";
 import TopHeaderComponent from "./topHeader";
 import BottomHeaderComponent from "./bottomHeader";
 
-function Header() {
+export interface ICityModal {
+  handleChangeUpperUserCityID: (changedUpperCityID: number) => void;
+}
+
+function Header({ handleChangeUpperUserCityID }: ICityModal) {
   const [visibleBottomHeader, setVisibleBottomHeader] = useState(true);
+
+  const changeUserCityID = (changedCityID: number) => {
+    handleChangeUpperUserCityID(changedCityID);
+  };
 
   useEffect(() => {
     const scrollListener = () => setVisibleBottomHeader(window.scrollY <= 60);
@@ -14,7 +22,7 @@ function Header() {
 
   return (
     <MainHeader>
-      <TopHeaderComponent />
+      <TopHeaderComponent handleChangeUpperUserCityID={changeUserCityID} />
       {visibleBottomHeader && <BottomHeaderComponent />}
     </MainHeader>
   );

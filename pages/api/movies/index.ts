@@ -11859,7 +11859,13 @@ async function Movies(request: NextApiRequest, response: NextApiResponse) {
       ],
     },
   ];
-  response.status(200).json(mockedSaoPauloMovies);
+  response
+    .status(200)
+    .json(
+      Number(request.query.stateID) == 1
+        ? mockedSaoPauloMovies
+        : mockedRioDeJaneiroMovies
+    );
 }
 
 export default Movies;

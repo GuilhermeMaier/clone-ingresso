@@ -20,17 +20,19 @@ export interface IOption {
   value: number;
 }
 
+export interface ICityModal {
+  userCity: string;
+  userCityID: number;
+  handleChangeUserCity: (changedCity: string) => void;
+  handleChangeUserCityID: (changedCityID: number) => void;
+}
+
 function CityModalComponent({
   userCity,
   userCityID,
   handleChangeUserCity,
   handleChangeUserCityID,
-}: {
-  userCity: string;
-  userCityID: number;
-  handleChangeUserCity: (changedCity: string) => void;
-  handleChangeUserCityID: (changedCityID: number) => void;
-}) {
+}: ICityModal) {
   const [currentState, setCurrentState] = useState({ name: "", value: 0 });
   const [currentCity, setCurrentCity] = useState({
     name: userCity,

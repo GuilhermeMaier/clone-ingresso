@@ -17,7 +17,11 @@ import { CentralizedContainer, VeticalAligner } from "../common/common.styles";
 import SearchInputComponent from "../common/searchInput";
 import CityModalComponent from "../common/cityModal";
 
-function TopHeaderComponent() {
+export interface ICityModal {
+  handleChangeUpperUserCityID: (changedUpperCityID: number) => void;
+}
+
+function TopHeaderComponent({ handleChangeUpperUserCityID }: ICityModal) {
   const [cityModalVisibility, setCityModalVisibility] =
     useState<boolean>(false);
   const [userCity, setUserCity] = useState<string>("Selecione uma cidade");
@@ -36,6 +40,7 @@ function TopHeaderComponent() {
 
   const changeUserCityID = (changedCityID: number) => {
     setUserCityID(changedCityID);
+    handleChangeUpperUserCityID(changedCityID);
   };
 
   return (
@@ -52,6 +57,7 @@ function TopHeaderComponent() {
                   src={"/images/logo.png"}
                   height={greatLogo ? 40 : 30}
                   width={greatLogo ? 256.67 : 192.5}
+                  alt="ingresso.com"
                 />
               </HeaderClickableTextContainer>
             </HeaderLogoContainer>

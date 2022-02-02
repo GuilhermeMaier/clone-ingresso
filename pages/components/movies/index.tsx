@@ -39,7 +39,11 @@ interface IEvent {
   event: IMovie;
 }
 
-function Movies() {
+export interface ICityModal {
+  userCityID: number;
+}
+
+function Movies({ userCityID }: ICityModal) {
   const [loading, setLoading] = useState<boolean>(true);
   const [movies, setMovies] = useState<IEvent[]>([]);
   const [scrollX, setScrollX] = useState<number>(0);
@@ -55,6 +59,13 @@ function Movies() {
   useEffect(() => {
     fetchMovies();
   }, []);
+
+  useEffect(() => {
+    if (userCityID != 0) {
+      setLoading(true);
+      fetchMovies();
+    }
+  }, [userCityID]);
 
   useEffect(() => {
     movies && setLoading(false);

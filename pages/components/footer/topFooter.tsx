@@ -43,6 +43,7 @@ function TopFooterComponent() {
                     width={130}
                     height={45}
                     src={"/images/apple-store.svg"}
+                    alt="apple-store"
                   />
                 </FooterTextClickableContainer>
                 <FooterTextClickableContainer
@@ -62,6 +63,7 @@ function TopFooterComponent() {
                     width={130}
                     height={38}
                     src={"/images/google-play.png"}
+                    alt="play-store"
                   />
                 </FooterTextClickableContainer>
               </FooterImagesContainer>
