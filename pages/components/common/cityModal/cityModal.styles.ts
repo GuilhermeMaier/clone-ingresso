@@ -21,4 +21,6 @@ export const RightContainer = styled.div`
   border-left: 1px solid #666;
 `;
 
+export const TextContainer = styled.div``;
+
 export default CityModal;

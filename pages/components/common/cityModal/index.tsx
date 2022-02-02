@@ -1,8 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
 import CentralizedContainer from "../common.styles";
-import CustomSelectContainer from "../customSelect/customSelect.styles";
-import CityModal, { LeftContainer, RightContainer } from "./cityModal.styles";
+import CustomSelectContainer, {
+  CustomSelectIconContainer,
+} from "../customSelect/customSelect.styles";
+import CityModal, {
+  LeftContainer,
+  RightContainer,
+  TextContainer,
+} from "./cityModal.styles";
 
 export interface ICustomBody {
   options: IOption[];
@@ -85,7 +92,11 @@ function CityModalComponent({
     <CentralizedContainer style={{ position: "relative" }}>
       <CityModal>
         <LeftContainer>
-          <CustomSelectContainer>
+          <TextContainer>
+            Você está em:{" "}
+            {currentCity.name != "Selecione uma cidade" ? currentCity.name : ""}
+          </TextContainer>
+          <CustomSelectContainer style={{ marginTop: 15 }}>
             <div style={{ position: "relative", width: "100%" }}>
               <select
                 onChange={(event) => {
@@ -105,12 +116,15 @@ function CityModalComponent({
                   }
                 }}
               >
-                <option value={0}>Selecione</option>
+                <option value={0}>Selecione um Estado</option>
                 {selectStateOptions}
               </select>
+              <CustomSelectIconContainer>
+                <FaChevronDown />
+              </CustomSelectIconContainer>
             </div>
           </CustomSelectContainer>
-          <CustomSelectContainer>
+          <CustomSelectContainer style={{ marginTop: 15 }}>
             <div style={{ position: "relative", width: "100%" }}>
               <select
                 disabled={citiesSelectDisabled}
@@ -128,13 +142,14 @@ function CityModalComponent({
                   }
                 }}
               >
-                <option value={0}>Selecione</option>
+                <option value={0}>Selecione uma Cidade</option>
                 {selectCityOptions}
               </select>
+              <CustomSelectIconContainer>
+                <FaChevronDown />
+              </CustomSelectIconContainer>
             </div>
           </CustomSelectContainer>
-          {/* <CustomSelectComponent options={states} />
-          <CustomSelectComponent options={cities} /> */}
         </LeftContainer>
         <RightContainer>LorenIpsum</RightContainer>
       </CityModal>

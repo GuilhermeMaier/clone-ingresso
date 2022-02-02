@@ -15,6 +15,7 @@ export const CustomSelectContainer = styled.div`
     border-radius: 3px;
     border: 0;
     border-left: 3px solid #999;
+    appearance: none;
 
     & :focus {
       border: 1px solid #09f;
@@ -28,7 +29,8 @@ export const CustomSelectIconContainer = styled.div`
   color: #09f;
   position: absolute;
   right: 5px;
-  top: 2px;
+  top: 9px;
+  font-size: 12px;
 `;
 
 export default CustomSelectContainer;
