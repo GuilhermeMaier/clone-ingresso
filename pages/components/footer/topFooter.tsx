@@ -103,7 +103,9 @@ function TopFooterComponent({ isResponsive }: IBody) {
                   href={"https://www.linkedin.com/company/ingresso-com/"}
                   target={"_blank"}
                 >
-                  <FooterIconContainer style={{ background: "#0077b5" }}>
+                  <FooterIconContainer
+                    style={{ background: "#0077b5", marginRight: 0 }}
+                  >
                     <FiLinkedin />
                   </FooterIconContainer>
                 </FooterTextClickableContainer>
