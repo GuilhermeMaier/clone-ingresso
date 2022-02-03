@@ -48,10 +48,6 @@ function Hero({ userCityID }: ICityModal) {
   }
 
   useEffect(() => {
-    fetchHeroMovie();
-  }, []);
-
-  useEffect(() => {
     if (userCityID != 0) {
       setLoading(true);
       fetchHeroMovie();

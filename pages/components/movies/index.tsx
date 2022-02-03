@@ -72,7 +72,6 @@ function Movies({ userCityID }: ICityModal) {
   };
 
   useEffect(() => {
-    fetchMovies();
     window.addEventListener("resize", onWindowResized);
     return () => window.removeEventListener("resize", onWindowResized);
   }, []);
