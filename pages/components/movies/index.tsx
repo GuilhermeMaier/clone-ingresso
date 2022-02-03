@@ -63,13 +63,38 @@ function Movies({ userCityID }: ICityModal) {
       const windowWidth = window.innerWidth;
       const isResponsive = windowWidth < 800;
       const maxMargin = movies.length * 2 * 245;
+      const widthExcedsMaxWidth = windowWidth * 0.8 > 1100;
+      const sideMarginDiscount = widthExcedsMaxWidth
+        ? windowWidth - 1100 - 5
+        : windowWidth * 0.8;
+
       setMaxMarginRight(
         isResponsive == false
-          ? windowWidth - maxMargin - windowWidth / 5
+          ? windowWidth - maxMargin - sideMarginDiscount
           : windowWidth - maxMargin
       );
     }
   };
+
+  function handleLeftArrowClick() {
+    const isResponsive = window.innerWidth < 800;
+    const x = scrollX + (isResponsive == false ? window.innerWidth / 3 : 230);
+    setScrollX(x > 0 ? (isResponsive ? 10 : 0) : x);
+  }
+
+  function handleRightArrowClick() {
+    const isResponsive = window.innerWidth < 800;
+    const x =
+      scrollX - Math.round(isResponsive == false ? window.innerWidth / 3 : 230);
+    setScrollX(maxMarginRight > x ? maxMarginRight : x);
+  }
+
+  const allVerticalMovies = movies.map((currentMovie) => {
+    return (
+      <VerticalMovie key={currentMovie.event.id} event={currentMovie.event} />
+    );
+  });
+  console.log(maxMarginRight);
 
   useEffect(() => {
     window.addEventListener("resize", onWindowResized);
@@ -89,24 +114,6 @@ function Movies({ userCityID }: ICityModal) {
       onWindowResized();
     }
   }, [movies]);
-
-  function handleLeftArrowClick() {
-    const x = scrollX + (window.innerWidth > 800 ? window.innerWidth / 3 : 230);
-    setScrollX(x > 0 ? 0 : x);
-  }
-
-  function handleRightArrowClick() {
-    const x =
-      scrollX -
-      Math.round(window.innerWidth > 800 ? window.innerWidth / 3 : 230);
-    setScrollX(maxMarginRight > x ? maxMarginRight : x);
-  }
-
-  const allVerticalMovies = movies.map((currentMovie) => {
-    return (
-      <VerticalMovie key={currentMovie.event.id} event={currentMovie.event} />
-    );
-  });
 
   return (
     <MoviesContainer style={{ height: 500 }}>
@@ -128,7 +135,7 @@ function Movies({ userCityID }: ICityModal) {
           <MoviesCarrouselContainer>
             <ArrowContainer
               side={"left"}
-              style={{ display: scrollX == 0 ? "none" : "flex" }}
+              style={{ display: scrollX >= 0 ? "none" : "flex" }}
               onClick={handleLeftArrowClick}
             >
               <BsChevronLeft />
