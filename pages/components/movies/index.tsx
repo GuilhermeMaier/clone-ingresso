@@ -61,12 +61,12 @@ function Movies({ userCityID }: ICityModal) {
   const onWindowResized = () => {
     if (movies.length) {
       const windowWidth = window.innerWidth;
-      const isResponsive = windowWidth < 800;
+      const isResponsive = windowWidth < 1100;
       const maxMargin = movies.length * 2 * 245;
       const widthExcedsMaxWidth = windowWidth * 0.8 > 1100;
       const sideMarginDiscount = widthExcedsMaxWidth
         ? windowWidth - 1100 - 5
-        : windowWidth * 0.8;
+        : windowWidth - windowWidth * 0.8 - 5;
 
       setMaxMarginRight(
         isResponsive == false
@@ -77,13 +77,13 @@ function Movies({ userCityID }: ICityModal) {
   };
 
   function handleLeftArrowClick() {
-    const isResponsive = window.innerWidth < 800;
+    const isResponsive = window.innerWidth < 1100;
     const x = scrollX + (isResponsive == false ? window.innerWidth / 3 : 230);
-    setScrollX(x > 0 ? (isResponsive ? 10 : 0) : x);
+    setScrollX(x > 0 ? (isResponsive ? 5 : 0) : x);
   }
 
   function handleRightArrowClick() {
-    const isResponsive = window.innerWidth < 800;
+    const isResponsive = window.innerWidth < 1100;
     const x =
       scrollX - Math.round(isResponsive == false ? window.innerWidth / 3 : 230);
     setScrollX(maxMarginRight > x ? maxMarginRight : x);

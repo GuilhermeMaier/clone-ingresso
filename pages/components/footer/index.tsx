@@ -13,7 +13,7 @@ function Footer() {
   }, []);
 
   const onWindowResized = () => {
-    setIsResponsive(window.innerWidth < 800);
+    setIsResponsive(window.innerWidth < 1100);
   };
   return (
     <MainFooter>

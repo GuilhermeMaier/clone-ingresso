@@ -42,7 +42,7 @@ function TopHeaderComponent({ handleChangeUpperUserCityID }: ICityModal) {
   }, []);
 
   const onWindowResized = () => {
-    setIsResponsive(window.innerWidth < 800);
+    setIsResponsive(window.innerWidth < 1100);
   };
 
   const changeUserCity = (changedCity: string) => {
