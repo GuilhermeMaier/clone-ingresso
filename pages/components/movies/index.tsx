@@ -48,6 +48,7 @@ function Movies({ userCityID }: ICityModal) {
   const [loading, setLoading] = useState<boolean>(true);
   const [movies, setMovies] = useState<IEvent[]>([]);
   const [scrollX, setScrollX] = useState<number>(0);
+  const [maxMarginRight, setMaxMarginRight] = useState<number>(0);
 
   async function fetchMovies() {
     try {
@@ -69,13 +70,16 @@ function Movies({ userCityID }: ICityModal) {
   }, [userCityID]);
 
   useEffect(() => {
-    movies && setLoading(false);
-  }, [movies]);
-
-  useEffect(() => {
     if (movies.length) {
-      const featuredMovie = Math.floor(Math.random() * movies.length);
       setLoading(false);
+      const windowWidth = window.innerWidth;
+      const isResponsive = windowWidth < 800;
+      const maxMargin = movies.length * 2 * 245;
+      setMaxMarginRight(
+        window.innerWidth -
+          maxMargin -
+          (isResponsive == false ? window.innerWidth / 5 : 0)
+      );
     }
   }, [movies]);
 
@@ -86,9 +90,7 @@ function Movies({ userCityID }: ICityModal) {
 
   function handleRightArrowClick() {
     const x = scrollX - Math.round(window.innerWidth / 3);
-    const maxMargin = movies.length * 2 * 245;
-    const margin = window.innerWidth - maxMargin - window.innerWidth / 5;
-    setScrollX(margin > x ? margin : x);
+    setScrollX(maxMarginRight > x ? maxMarginRight : x);
   }
 
   const allVerticalMovies = movies.map((currentMovie) => {
@@ -96,7 +98,7 @@ function Movies({ userCityID }: ICityModal) {
       <VerticalMovie key={currentMovie.event.id} event={currentMovie.event} />
     );
   });
-
+  console.log(maxMarginRight);
   return (
     <MoviesContainer style={{ height: 500 }}>
       {loading ? (
@@ -135,13 +137,7 @@ function Movies({ userCityID }: ICityModal) {
             <ArrowContainer
               side={"right"}
               style={{
-                display:
-                  scrollX ==
-                  window.innerWidth -
-                    movies.length * 2 * 245 -
-                    window.innerWidth / 5
-                    ? "none"
-                    : "flex",
+                display: scrollX == maxMarginRight ? "none" : "flex",
               }}
               onClick={handleRightArrowClick}
             >
