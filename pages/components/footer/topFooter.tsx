@@ -9,6 +9,7 @@ import {
   FooterIconContainer,
   FooterImagesContainer,
   FooterItemContainer,
+  FooterItemImagesContainer,
   FooterTextClickableContainer,
   FooterTextContainer,
   TopFooter,
@@ -16,63 +17,72 @@ import {
 } from "./footer.styles";
 
 function TopFooterComponent() {
-  const [userCity, setUserCity] = useState("Selecione uma Cidade");
-  const [greatLogo, setGreatLogo] = useState(true);
+  const [isResponsive, setIsResponsive] = useState(false);
 
   useEffect(() => {
-    const scrollListener = () => setGreatLogo(window.scrollY <= 60);
-    window.addEventListener("scroll", scrollListener);
-    return () => window.removeEventListener("scroll", scrollListener);
+    onWindowResized();
+    window.addEventListener("resize", onWindowResized);
+    return () => window.removeEventListener("resize", onWindowResized);
   }, []);
+
+  const onWindowResized = () => {
+    setIsResponsive(window.innerWidth < 800);
+  };
 
   return (
     <TopFooterContainer>
       <CentralizedContainer>
         <TopFooter>
           <FooterAllItemsContainer>
-            <FooterItemContainer style={{ width: 280 }}>
-              <FooterTextContainer>BAIXE NOSSO APP</FooterTextContainer>
-              <FooterImagesContainer>
-                <FooterTextClickableContainer
-                  href={
-                    "https://itunes.apple.com/br/app/ingresso-com/id1165054492?mt=8"
-                  }
-                  target={"_blank"}
-                >
-                  <Image
-                    width={130}
-                    height={45}
-                    src={"/images/apple-store.svg"}
-                    alt="apple-store"
-                  />
-                </FooterTextClickableContainer>
-                <FooterTextClickableContainer
-                  style={{
-                    borderRadius: 6,
-                    border: "1px solid #999",
-                    padding: 0,
-                    height: "fit-content",
-                    marginTop: 5,
-                  }}
-                  href={
-                    "https://play.google.com/store/apps/details?id=com.ingresso.cinemas&hl=pt_BR"
-                  }
-                  target={"_blank"}
-                >
-                  <Image
-                    width={130}
-                    height={38}
-                    src={"/images/google-play.png"}
-                    alt="play-store"
-                  />
-                </FooterTextClickableContainer>
-              </FooterImagesContainer>
-            </FooterItemContainer>
-            <FooterItemContainer style={{ width: 280 }}>
-              <FooterTextContainer>
-                SIGA-NOS NAS REDES SOCIAIS
-              </FooterTextContainer>
-              <FooterImagesContainer style={{ justifyContent: "start" }}>
+            {isResponsive == false && (
+              <FooterItemContainer style={{ width: 280 }}>
+                <FooterTextContainer>BAIXE NOSSO APP</FooterTextContainer>
+                <FooterImagesContainer>
+                  <FooterTextClickableContainer
+                    href={
+                      "https://itunes.apple.com/br/app/ingresso-com/id1165054492?mt=8"
+                    }
+                    target={"_blank"}
+                  >
+                    <Image
+                      width={130}
+                      height={45}
+                      src={"/images/apple-store.svg"}
+                      alt="apple-store"
+                    />
+                  </FooterTextClickableContainer>
+                  <FooterTextClickableContainer
+                    style={{
+                      borderRadius: 6,
+                      border: "1px solid #999",
+                      padding: 0,
+                      height: "fit-content",
+                      marginTop: 5,
+                    }}
+                    href={
+                      "https://play.google.com/store/apps/details?id=com.ingresso.cinemas&hl=pt_BR"
+                    }
+                    target={"_blank"}
+                  >
+                    <Image
+                      width={130}
+                      height={38}
+                      src={"/images/google-play.png"}
+                      alt="play-store"
+                    />
+                  </FooterTextClickableContainer>
+                </FooterImagesContainer>
+              </FooterItemContainer>
+            )}
+            <FooterItemImagesContainer>
+              {isResponsive == false && (
+                <FooterTextContainer>
+                  SIGA-NOS NAS REDES SOCIAIS
+                </FooterTextContainer>
+              )}
+              <FooterImagesContainer
+                style={{ justifyContent: isResponsive ? "center" : "start" }}
+              >
                 <FooterTextClickableContainer
                   href={"http://facebook.com/ingressocom/"}
                   target={"_blank"}
@@ -106,18 +116,20 @@ function TopFooterComponent() {
                   </FooterIconContainer>
                 </FooterTextClickableContainer>
               </FooterImagesContainer>
-            </FooterItemContainer>
-            <FooterItemContainer style={{ width: 280 }}>
-              <FooterTextContainer>PRECISA DE AJUDA?</FooterTextContainer>
-              <FooterImagesContainer>
-                <FooterHelpContainer
-                  href={"https://atendimento.ingresso.com/hc/pt-br"}
-                  target={"_blank"}
-                >
-                  ATENDIMENTO
-                </FooterHelpContainer>
-              </FooterImagesContainer>
-            </FooterItemContainer>
+            </FooterItemImagesContainer>
+            {isResponsive == false && (
+              <FooterItemContainer style={{ width: 280 }}>
+                <FooterTextContainer>PRECISA DE AJUDA?</FooterTextContainer>
+                <FooterImagesContainer>
+                  <FooterHelpContainer
+                    href={"https://atendimento.ingresso.com/hc/pt-br"}
+                    target={"_blank"}
+                  >
+                    ATENDIMENTO
+                  </FooterHelpContainer>
+                </FooterImagesContainer>
+              </FooterItemContainer>
+            )}
           </FooterAllItemsContainer>
         </TopFooter>
       </CentralizedContainer>

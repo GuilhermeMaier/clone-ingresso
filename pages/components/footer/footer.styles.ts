@@ -3,10 +3,6 @@ import styled from "styled-components";
 export const MainFooter = styled.footer`
   width: 100%;
   background: #212121;
-
-  @media (max-width: 1100px) {
-    display: none;
-  }
 `;
 
 export const TopFooterContainer = styled.div`
@@ -34,14 +30,33 @@ export const FooterAllItemsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const FooterItemContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const FooterItemImagesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 280px;
 
   & span {
+    flex-direction: row;
     margin-right: 15px;
+  }
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
   }
 `;
 
@@ -49,6 +64,12 @@ export const FooterImagesContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 1100px) {
+    position: absolute;
+    top: -38px;
+    justify-content: center;
+  }
 `;
 
 export const FooterIconContainer = styled.span`

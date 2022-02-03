@@ -65,7 +65,7 @@ export const MoviesInnerCarrousel = styled.div`
 export const ArrowContainer = styled.div<{ side: "left" | "right" }>`
   cursor: pointer;
   position: absolute;
-  width: 150px;
+  width: 50px;
   height: 356px;
   z-index: 1;
   flex-direction: column;
@@ -97,6 +97,10 @@ export const ArrowContainer = styled.div<{ side: "left" | "right" }>`
     `};
 
   & :hover {
+    color: #09f;
+  }
+
+  @media (max-width: 1100px) {
     color: #09f;
   }
 `;
