@@ -16,19 +16,11 @@ import {
   TopFooterContainer,
 } from "./footer.styles";
 
-function TopFooterComponent() {
-  const [isResponsive, setIsResponsive] = useState(false);
+interface IBody {
+  isResponsive: boolean;
+}
 
-  useEffect(() => {
-    onWindowResized();
-    window.addEventListener("resize", onWindowResized);
-    return () => window.removeEventListener("resize", onWindowResized);
-  }, []);
-
-  const onWindowResized = () => {
-    setIsResponsive(window.innerWidth < 800);
-  };
-
+function TopFooterComponent({ isResponsive }: IBody) {
   return (
     <TopFooterContainer>
       <CentralizedContainer>

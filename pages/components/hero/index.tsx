@@ -58,6 +58,10 @@ function Hero({ userCityID }: ICityModal) {
     }
   }, [userCityID]);
 
+  const allGenres = feauredMovieData?.event.genres.map((currentGenre) => {
+    return <Genre key={Math.random()}>{currentGenre}</Genre>;
+  });
+
   return (
     <HeroContainer>
       {loading ? (
@@ -74,15 +78,14 @@ function Hero({ userCityID }: ICityModal) {
         >
           <div style={{ position: "absolute", bottom: 0 }}>
             <TagsContainer style={{ marginBottom: 5 }}>
-              <Tag style={{ background: "#31d885" }}>Família</Tag>
-              <Tag style={{ background: "#ee7f1d" }}>Em alta</Tag>
+              <Tag style={{ background: "#31d885" }}>TAG</Tag>
+              <Tag style={{ background: "#ee7f1d" }}>TAG</Tag>
             </TagsContainer>
             <FeaturedTitle style={{ marginBottom: 5 }}>
               {feauredMovieData?.event.title}
             </FeaturedTitle>
             <GenreContainer style={{ marginBottom: 20 }}>
-              <Genre>Gênero</Genre>
-              <Genre>Gênero</Genre>
+              {allGenres}
             </GenreContainer>
           </div>
         </ImageContainer>

@@ -64,9 +64,9 @@ function Movies({ userCityID }: ICityModal) {
       const isResponsive = windowWidth < 800;
       const maxMargin = movies.length * 2 * 245;
       setMaxMarginRight(
-        window.innerWidth -
-          maxMargin -
-          (isResponsive == false ? window.innerWidth / 5 : 0)
+        isResponsive == false
+          ? windowWidth - maxMargin - windowWidth / 5
+          : windowWidth - maxMargin
       );
     }
   };
