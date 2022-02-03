@@ -80,15 +80,15 @@ function Movies({ userCityID }: ICityModal) {
   }, [movies]);
 
   function handleLeftArrowClick() {
-    const x = scrollX + 600;
+    const x = scrollX + window.innerWidth / 3;
     setScrollX(x > 0 ? 0 : x);
   }
 
   function handleRightArrowClick() {
-    const x = scrollX - 600;
-    const maxMargin = 270 * movies.length * -1;
-    console.log(movies.length);
-    setScrollX(x < maxMargin ? maxMargin : x);
+    const x = scrollX - Math.round(window.innerWidth / 3);
+    const maxMargin = movies.length * 2 * 245;
+    const margin = window.innerWidth - maxMargin - window.innerWidth / 5;
+    setScrollX(margin > x ? margin : x);
   }
 
   const allVerticalMovies = movies.map((currentMovie) => {
@@ -135,7 +135,13 @@ function Movies({ userCityID }: ICityModal) {
             <ArrowContainer
               side={"right"}
               style={{
-                display: scrollX == 270 * movies.length * -1 ? "none" : "flex",
+                display:
+                  scrollX ==
+                  window.innerWidth -
+                    movies.length * 2 * 245 -
+                    window.innerWidth / 5
+                    ? "none"
+                    : "flex",
               }}
               onClick={handleRightArrowClick}
             >

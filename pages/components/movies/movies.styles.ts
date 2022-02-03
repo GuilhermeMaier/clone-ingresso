@@ -43,7 +43,7 @@ export const MoviesCarrousel = styled.div`
   display: block;
   position: relative;
   overflow: visible;
-  max-width: 1100px;
+  max-width: 80vw;
 
   & * {
     transition: all 0.5s ease;

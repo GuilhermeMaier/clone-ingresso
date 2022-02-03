@@ -57,10 +57,6 @@ export const FeaturedTitle = styled.h2`
   color: white;
   font-weight: bold;
   margin-top: 0;
-
-  @media (max-width: 1100px) {
-    font-size: 12px;
-  }
 `;
 
 export default HeroContainer;
