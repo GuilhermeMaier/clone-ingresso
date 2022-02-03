@@ -153,7 +153,6 @@ function CityModalComponent({
             </div>
           </CustomSelectContainer>
         </LeftContainer>
-        <RightContainer>LorenIpsum</RightContainer>
       </CityModal>
     </CentralizedContainer>
   );

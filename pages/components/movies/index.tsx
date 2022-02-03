@@ -108,7 +108,7 @@ function Movies({ userCityID }: ICityModal) {
       <VerticalMovie key={currentMovie.event.id} event={currentMovie.event} />
     );
   });
-  console.log(maxMarginRight);
+
   return (
     <MoviesContainer style={{ height: 500 }}>
       {loading ? (

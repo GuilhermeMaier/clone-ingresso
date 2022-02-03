@@ -12,6 +12,7 @@ import {
   HeaderTextContainer,
   TopHeader,
   TopHeaderContainer,
+  TopHeaderSearchInputContainer,
 } from "./header.styles";
 import { CentralizedContainer, VeticalAligner } from "../common/common.styles";
 import SearchInputComponent from "../common/searchInput";
@@ -27,12 +28,23 @@ function TopHeaderComponent({ handleChangeUpperUserCityID }: ICityModal) {
   const [userCity, setUserCity] = useState<string>("Selecione uma cidade");
   const [userCityID, setUserCityID] = useState<number>(0);
   const [greatLogo, setGreatLogo] = useState(true);
+  const [isResponsive, setIsResponsive] = useState(false);
 
   useEffect(() => {
     const scrollListener = () => setGreatLogo(window.scrollY <= 60);
     window.addEventListener("scroll", scrollListener);
     return () => window.removeEventListener("scroll", scrollListener);
   }, []);
+
+  useEffect(() => {
+    onWindowResized();
+    window.addEventListener("resize", onWindowResized);
+    return () => window.removeEventListener("resize", onWindowResized);
+  }, []);
+
+  const onWindowResized = () => {
+    setIsResponsive(window.innerWidth < 800);
+  };
 
   const changeUserCity = (changedCity: string) => {
     setUserCity(changedCity);
@@ -45,7 +57,9 @@ function TopHeaderComponent({ handleChangeUpperUserCityID }: ICityModal) {
 
   return (
     <>
-      <TopHeaderContainer style={{ height: greatLogo ? 60 : 54 }}>
+      <TopHeaderContainer
+        style={{ height: isResponsive ? "unset" : greatLogo ? 60 : 54 }}
+      >
         <CentralizedContainer>
           <TopHeader>
             <HeaderLogoContainer>
@@ -53,18 +67,27 @@ function TopHeaderComponent({ handleChangeUpperUserCityID }: ICityModal) {
                 href={"https://ingresso.com/home"}
                 target={"_blank"}
               >
-                <Image
-                  src={"/images/logo.png"}
-                  height={greatLogo ? 40 : 30}
-                  width={greatLogo ? 256.67 : 192.5}
-                  alt="ingresso.com"
-                />
+                {isResponsive == false ? (
+                  <Image
+                    src={"/images/logo.png"}
+                    height={greatLogo ? 40 : 30}
+                    width={greatLogo ? 256.67 : 192.5}
+                    alt="ingresso.com"
+                  />
+                ) : (
+                  <Image
+                    src={"/images/logo-responsive.svg"}
+                    height={42}
+                    width={32}
+                    alt="ingresso.com"
+                  />
+                )}
               </HeaderClickableTextContainer>
             </HeaderLogoContainer>
             <VeticalAligner>
               <HeaderAllItemsContainer>
                 <HeaderItemContainer>
-                  <SearchInputComponent />
+                  {isResponsive == false && <SearchInputComponent />}
                 </HeaderItemContainer>
                 <HeaderItemContainer
                   onClick={() => setCityModalVisibility(!cityModalVisibility)}

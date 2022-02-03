@@ -16,6 +16,10 @@ export const TopHeader = styled.div`
   display: flex;
   padding: 10px 0;
   justify-content: space-between;
+
+  @media (max-width: 1260px) {
+    padding: 0;
+  }
 `;
 
 export const BottomHeaderContainer = styled.div`
@@ -80,18 +84,6 @@ export const HeaderTextContainer = styled.p`
 
   @media (max-width: 1260px) {
     display: none;
-  }
-`;
-
-export const HeaderExclamationCircle = styled.span`
-  position: absolute;
-  top: -6px;
-  right: -4px;
-  z-index: 1;
-  font-size: 14px;
-
-  & * {
-    color: #f90 !important;
   }
 `;
 

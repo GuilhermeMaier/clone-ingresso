@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CustomSelectContainer = styled.div`
-  width: 250px;
+  width: inherit;
   display: flex;
   border-radius: 3px;
 
