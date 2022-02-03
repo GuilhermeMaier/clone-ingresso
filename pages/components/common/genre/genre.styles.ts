@@ -16,6 +16,10 @@ export const Genre = styled.p`
   font-size: 12px;
   margin-top: 0;
   margin-bottom: 0;
+
+  @media (max-width: 1100px) {
+    font-size: 8px;
+  }
 `;
 
 export default GenreContainer;

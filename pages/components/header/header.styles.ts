@@ -33,6 +33,10 @@ export const BottomHeader = styled.div`
     color: #09f !important;
     font-weight: bold;
   }
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `;
 
 export const HeaderLogoContainer = styled.div``;

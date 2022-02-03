@@ -13,6 +13,10 @@ export const Tag = styled.div`
   border-radius: 3px;
   text-transform: uppercase;
   font-size: 12px;
+
+  @media (max-width: 1100px) {
+    font-size: 8px;
+  }
 `;
 
 export default TagsContainer;
