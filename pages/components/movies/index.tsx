@@ -58,8 +58,23 @@ function Movies({ userCityID }: ICityModal) {
     }
   }
 
+  const onWindowResized = () => {
+    if (movies.length) {
+      const windowWidth = window.innerWidth;
+      const isResponsive = windowWidth < 800;
+      const maxMargin = movies.length * 2 * 245;
+      setMaxMarginRight(
+        window.innerWidth -
+          maxMargin -
+          (isResponsive == false ? window.innerWidth / 5 : 0)
+      );
+    }
+  };
+
   useEffect(() => {
     fetchMovies();
+    window.addEventListener("resize", onWindowResized);
+    return () => window.removeEventListener("resize", onWindowResized);
   }, []);
 
   useEffect(() => {
@@ -72,24 +87,19 @@ function Movies({ userCityID }: ICityModal) {
   useEffect(() => {
     if (movies.length) {
       setLoading(false);
-      const windowWidth = window.innerWidth;
-      const isResponsive = windowWidth < 800;
-      const maxMargin = movies.length * 2 * 245;
-      setMaxMarginRight(
-        window.innerWidth -
-          maxMargin -
-          (isResponsive == false ? window.innerWidth / 5 : 0)
-      );
+      onWindowResized();
     }
   }, [movies]);
 
   function handleLeftArrowClick() {
-    const x = scrollX + window.innerWidth / 3;
+    const x = scrollX + (window.innerWidth > 800 ? window.innerWidth / 3 : 230);
     setScrollX(x > 0 ? 0 : x);
   }
 
   function handleRightArrowClick() {
-    const x = scrollX - Math.round(window.innerWidth / 3);
+    const x =
+      scrollX -
+      Math.round(window.innerWidth > 800 ? window.innerWidth / 3 : 230);
     setScrollX(maxMarginRight > x ? maxMarginRight : x);
   }
 

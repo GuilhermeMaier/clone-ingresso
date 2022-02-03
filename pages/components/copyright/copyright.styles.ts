@@ -16,12 +16,23 @@ export const CopyrightDataContainer = styled.div`
 export const CopyrightTextContainer = styled.div`
   display: flex;
   margin-bottom: 5px;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 `;
 
 export const CopyrightText = styled.span`
   color: #979797;
   font-size: 12px;
   padding-right: 5px;
+
+  @media (max-width: 1100px) {
+    text-align: center;
+    margin-bottom: 5px;
+    padding-right: 0;
+  }
 `;
 
 export const CopyrightClickableText = styled.a`
@@ -29,6 +40,12 @@ export const CopyrightClickableText = styled.a`
   font-size: 12px;
   padding-right: 5px;
   cursor: pointer;
+
+  @media (max-width: 1100px) {
+    text-align: center;
+    margin-bottom: 5px;
+    padding-right: 0;
+  }
 `;
 
 export default Copyright;
