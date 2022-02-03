@@ -5,11 +5,7 @@ import CentralizedContainer from "../common.styles";
 import CustomSelectContainer, {
   CustomSelectIconContainer,
 } from "../customSelect/customSelect.styles";
-import CityModal, {
-  LeftContainer,
-  RightContainer,
-  TextContainer,
-} from "./cityModal.styles";
+import CityModal, { LeftContainer, TextContainer } from "./cityModal.styles";
 
 export interface ICustomBody {
   options: IOption[];

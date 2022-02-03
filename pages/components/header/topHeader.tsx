@@ -12,7 +12,6 @@ import {
   HeaderTextContainer,
   TopHeader,
   TopHeaderContainer,
-  TopHeaderSearchInputContainer,
 } from "./header.styles";
 import { CentralizedContainer, VeticalAligner } from "../common/common.styles";
 import SearchInputComponent from "../common/searchInput";
