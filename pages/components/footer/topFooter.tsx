@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { FiYoutube, FiFacebook, FiInstagram, FiLinkedin } from "react-icons/fi";
-import { BsInstagram } from "react-icons/bs";
 import { CentralizedContainer } from "../common/common.styles";
 import {
   FooterAllItemsContainer,
@@ -16,11 +15,11 @@ import {
   TopFooterContainer,
 } from "./footer.styles";
 
-interface IBody {
+interface IFooterBody {
   isResponsive: boolean;
 }
 
-function TopFooterComponent({ isResponsive }: IBody) {
+function TopFooterComponent({ isResponsive }: IFooterBody) {
   return (
     <TopFooterContainer>
       <CentralizedContainer>

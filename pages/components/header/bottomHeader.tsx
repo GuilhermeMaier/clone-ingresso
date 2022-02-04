@@ -5,7 +5,6 @@ import {
   HeaderAllItemsContainer,
   HeaderClickableTextContainer,
   HeaderItemContainer,
-  HeaderTextContainer,
 } from "./header.styles";
 import { CentralizedContainer, VeticalAligner } from "../common/common.styles";
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { IEvent } from "../../movies";
 import Loading from "../loading";
 import TagsContainer, { Tag } from "../tag/tag.styles";
 import VerticalMovieContainer, {
@@ -7,31 +8,6 @@ import VerticalMovieContainer, {
   MovieTitleContainer,
   VerticalMovieDataContainer,
 } from "./verticalMovie.styles";
-
-interface ITrailer {
-  type: string;
-  url: string;
-  embeddedUrl: string;
-}
-
-interface IThumb {
-  url: string;
-  type: string;
-}
-
-interface IMovie {
-  id: string;
-  title: string;
-  city: string;
-  siteURL: string;
-  images: IThumb[];
-  genres: string[];
-  trailers: ITrailer[];
-}
-
-interface IEvent {
-  event: IMovie;
-}
 
 function VerticalMovie({ event }: IEvent) {
   const [loading, setLoading] = useState<boolean>(true);

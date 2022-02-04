@@ -7,13 +7,13 @@ import CustomSelectContainer, {
 } from "../customSelect/customSelect.styles";
 import CityModal, { LeftContainer, TextContainer } from "./cityModal.styles";
 
-export interface ICustomBody {
-  options: IOption[];
-}
-
 export interface IOption {
   name: string;
   value: number;
+}
+
+export interface IUserCityIDBody {
+  userCityID: number;
 }
 
 export interface ICityModal {

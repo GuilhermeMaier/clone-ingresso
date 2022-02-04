@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { IUserCityIDBody } from "../common/cityModal";
 import CentralizedContainer from "../common/common.styles";
 import Loading from "../common/loading";
 import VerticalMovie from "../common/verticalMovie";
@@ -15,18 +16,18 @@ import {
   MoviesSectionTitleContainer,
 } from "./movies.styles";
 
-interface ITrailer {
+export interface ITrailer {
   type: string;
   url: string;
   embeddedUrl: string;
 }
 
-interface IThumb {
+export interface IThumb {
   url: string;
   type: string;
 }
 
-interface IMovie {
+export interface IMovie {
   id: string;
   title: string;
   city: string;
@@ -36,15 +37,11 @@ interface IMovie {
   trailers: ITrailer[];
 }
 
-interface IEvent {
+export interface IEvent {
   event: IMovie;
 }
 
-export interface ICityModal {
-  userCityID: number;
-}
-
-function Movies({ userCityID }: ICityModal) {
+function Movies({ userCityID }: IUserCityIDBody) {
   const [loading, setLoading] = useState<boolean>(true);
   const [movies, setMovies] = useState<IEvent[]>([]);
   const [scrollX, setScrollX] = useState<number>(0);

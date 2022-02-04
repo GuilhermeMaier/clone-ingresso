@@ -1,5 +1,5 @@
 import React from "react";
-import { CentralizedContainer, VeticalAligner } from "../common/common.styles";
+import { CentralizedContainer } from "../common/common.styles";
 import {
   BottomFooter,
   BottomFooterContainer,

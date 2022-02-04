@@ -3,11 +3,11 @@ import { MainHeader } from "./header.styles";
 import TopHeaderComponent from "./topHeader";
 import BottomHeaderComponent from "./bottomHeader";
 
-export interface ICityModal {
+export interface ICityChangeBody {
   handleChangeUpperUserCityID: (changedUpperCityID: number) => void;
 }
 
-function Header({ handleChangeUpperUserCityID }: ICityModal) {
+function Header({ handleChangeUpperUserCityID }: ICityChangeBody) {
   const [visibleBottomHeader, setVisibleBottomHeader] = useState(true);
 
   const changeUserCityID = (changedCityID: number) => {

@@ -1,40 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { IUserCityIDBody } from "../common/cityModal";
 import GenreContainer, { Genre } from "../common/genre/genre.styles";
 import Loading from "../common/loading";
 import { Tag, TagsContainer } from "../common/tag/tag.styles";
+import { IEvent } from "../movies";
 import HeroContainer, { FeaturedTitle, ImageContainer } from "./hero.styles";
 
-interface ITrailer {
-  type: string;
-  url: string;
-  embeddedUrl: string;
-}
-
-interface IThumb {
-  url: string;
-  type: string;
-}
-
-interface IMovie {
-  id: string;
-  title: string;
-  city: string;
-  siteURL: string;
-  images: IThumb[];
-  genres: string[];
-  trailers: ITrailer[];
-}
-
-interface IEvent {
-  event: IMovie;
-}
-
-export interface ICityModal {
-  userCityID: number;
-}
-
-function Hero({ userCityID }: ICityModal) {
+function Hero({ userCityID }: IUserCityIDBody) {
   const [loading, setLoading] = useState<boolean>(true);
   const [feauredMovieData, setFeaturedMovieData] = useState<IEvent>();
 

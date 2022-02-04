@@ -16,12 +16,9 @@ import {
 import { CentralizedContainer, VeticalAligner } from "../common/common.styles";
 import SearchInputComponent from "../common/searchInput";
 import CityModalComponent from "../common/cityModal";
+import { ICityChangeBody } from ".";
 
-export interface ICityModal {
-  handleChangeUpperUserCityID: (changedUpperCityID: number) => void;
-}
-
-function TopHeaderComponent({ handleChangeUpperUserCityID }: ICityModal) {
+function TopHeaderComponent({ handleChangeUpperUserCityID }: ICityChangeBody) {
   const [cityModalVisibility, setCityModalVisibility] =
     useState<boolean>(false);
   const [userCity, setUserCity] = useState<string>("Selecione uma cidade");
